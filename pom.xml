@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.jenkins-ci.plugins</groupId>
     <artifactId>plugin</artifactId>
-    <version>1.509</version>
+    <version>2.9</version>
   </parent>
 
   <artifactId>openid4java</artifactId>
@@ -66,7 +66,6 @@
    </pluginRepositories>
 
   <dependencies>
-    <!-- regular dependencies -->
     <dependency>
       <groupId>com.cloudbees</groupId>
       <artifactId>openid4java-shaded</artifactId>
@@ -83,46 +82,6 @@
         </exclusion>
       </exclusions>
     </dependency>
-    <!-- plugin dependencies -->
-    <!-- jenkins dependencies -->
-    <!-- test dependencies -->
   </dependencies>
-
-  <build>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <artifactId>maven-enforcer-plugin</artifactId>
-          <version>1.2</version>
-          <executions>
-            <execution>
-              <id>enforce-maven</id>
-              <goals>
-                <goal>enforce</goal>
-              </goals>
-              <configuration>
-                <rules>
-                  <requireMavenVersion>
-                    <version>(,2.1.0),(2.1.0,2.2.0),(2.2.0,)</version>
-                    <message>Maven 2.1.0 and 2.2.0 produce incorrect GPG signatures and checksums respectively.</message>
-                  </requireMavenVersion>
-                  <requireMavenVersion>
-                    <version>(,3.0),[3.0.4,)</version>
-                    <message>Maven 3.0 through 3.0.3 inclusive do not pass correct settings.xml to Maven Release Plugin.</message>
-                  </requireMavenVersion>
-                </rules>
-              </configuration>
-            </execution>
-          </executions>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-    <plugins>
-      <plugin>
-        <artifactId>maven-release-plugin</artifactId>
-        <version>2.5</version>
-      </plugin>
-    </plugins>
-  </build>
 
 </project>
