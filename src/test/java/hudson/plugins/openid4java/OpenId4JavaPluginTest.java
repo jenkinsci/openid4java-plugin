@@ -16,6 +16,8 @@ class OpenId4JavaPluginTest {
         assertNotNull(Class.forName("org.openid4java.consumer.ConsumerManager"));
         assertNotNull(Class.forName("org.openid4java.discovery.DiscoveryInformation"));
         assertNotNull(Class.forName("org.openid4java.util.HttpFetcherFactory"));
+        assertNotNull(Class.forName("org.openid4java.shaded.apache.hc.client5.http.impl.classic.CloseableHttpClient"));
+        assertNotNull(Class.forName("org.openid4java.shaded.google.inject.Guice"));
         assertNotNull(Class.forName("com.cloudbees.openid4java.team.TeamExtensionFactory"));
     }
 }
