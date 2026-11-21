@@ -62,7 +62,7 @@
     <jenkins.baseline>2.479</jenkins.baseline>
     <artifactId>bom-${jenkins.baseline}.x</artifactId>
     <jenkins.version>${jenkins.baseline}.3</jenkins.version>
-    <hpi.bundledArtifacts>aopalliance,commons-codec,javax.inject,openid4java-shaded,openid4java-team-extension</hpi.bundledArtifacts>
+    <hpi.bundledArtifacts>commons-codec,openid4java-shaded,openid4java-team-extension</hpi.bundledArtifacts>
     <hpi.strictBundledArtifacts>true</hpi.strictBundledArtifacts>
   </properties>
 
@@ -80,9 +80,9 @@
 
   <dependencies>
     <dependency>
-      <groupId>com.cloudbees</groupId>
+      <groupId>com.amarulasolutions</groupId>
       <artifactId>openid4java-shaded</artifactId>
-      <version>1.0.0.0</version>
+      <version>2.0.0</version>
     </dependency>
     <dependency>
       <groupId>com.cloudbees</groupId>
@@ -96,5 +96,18 @@
       </exclusions>
     </dependency>
   </dependencies>
+
+  <profiles>
+    <profile>
+      <id>github-packages</id>
+      <repositories>
+        <repository>
+          <id>github</id>
+          <name>GitHub Packages</name>
+          <url>https://maven.pkg.github.com/amarula/openid4java</url>
+        </repository>
+      </repositories>
+    </profile>
+  </profiles>
 
 </project>
