@@ -74,23 +74,8 @@ the Jenkins Security Scan) also need it declared in the consuming POM:
 
 ### Shaded artifact repository
 
-The Amarula shaded artifact is published to GitHub Packages:
-
-```
-https://maven.pkg.github.com/amarula/openid4java
-```
-
-Clean builds need a `github` server in `~/.m2/settings.xml` with a
-`read:packages` token, and the `github-packages` Maven profile declared in the
-POM:
-
-```bash
-mvn -Pgithub-packages verify
-```
-
-For the public Jenkins plugin release, mirror the shaded artifact to Maven
-Central or `repo.jenkins-ci.org`; the public Jenkins CI does not have GitHub
-Packages credentials.
+The Amarula shaded artifact is published to Maven Central, so clean builds
+resolve it without extra repositories, credentials, or Maven profiles.
 
 ## Compatibility
 
@@ -108,9 +93,6 @@ The plugin uses the standard Jenkins plugin parent POM:
 ```bash
 mvn verify
 ```
-
-If the shaded artifact is not already in the local Maven repository, use
-`mvn -Pgithub-packages verify` after configuring the `github` server.
 
 `mvn verify` runs `OpenId4JavaPluginTest`, which starts an in-process Jenkins,
 checks that the plugin is loaded and verifies that representative classes from
