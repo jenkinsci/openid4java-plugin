@@ -64,6 +64,7 @@
     <jenkins.version>${jenkins.baseline}.3</jenkins.version>
     <hpi.bundledArtifacts>aopalliance,commons-codec,javax.inject,openid4java-shaded,openid4java-team-extension</hpi.bundledArtifacts>
     <hpi.strictBundledArtifacts>true</hpi.strictBundledArtifacts>
+    <ban-junit4-imports.skip>false</ban-junit4-imports.skip>
   </properties>
 
   <dependencyManagement>
